@@ -76,6 +76,12 @@
   tr.lunch td { background: var(--accent-soft); }
   tr.lunch td:first-child { border-radius: 6px 0 0 6px; }
   tr.lunch td:last-child { border-radius: 0 6px 6px 0; }
+  tr.now td { background: var(--sand-soft); }
+  tr.now td:first-child { box-shadow: inset 3px 0 0 var(--sand); border-radius: 6px 0 0 6px; }
+  tr.now td:last-child { border-radius: 0 6px 6px 0; }
+  tr.now td.t { color: var(--sand); }
+  tr.now td.t::after { content: "ahora"; display: block; font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--sand); }
+  .card.today { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent-soft); }
   .note { font-size: 0.88rem; color: var(--ink-soft); margin: 0.3rem 0 0.8rem; }
   .warn {
     background: var(--warn-bg); border-left: 4px solid var(--warn-border);
@@ -108,7 +114,7 @@
 </div>
 
 <!-- VIERNES 24 -->
-<div class="card">
+<div class="card" data-date="2026-07-24">
   <div class="dayhead">
     <div class="day-date"><span class="dow">Vie</span><span class="num">24</span></div>
     <h3>Llegada<span class="where">Aeropuerto → hotel</span></h3>
@@ -120,7 +126,7 @@
 </div>
 
 <!-- SÁBADO 25 -->
-<div class="card">
+<div class="card" data-date="2026-07-25">
   <div class="dayhead">
     <div class="day-date"><span class="dow">Sáb</span><span class="num">25</span></div>
     <h3>Sant Tomàs y Binigaus<span class="where">Día suave · 10–15 min de coche</span></h3>
@@ -137,7 +143,7 @@
 </div>
 
 <!-- DOMINGO 26 -->
-<div class="card rest">
+<div class="card rest" data-date="2026-07-26">
   <div class="dayhead">
     <div class="day-date"><span class="dow">Dom</span><span class="num">26</span></div>
     <h3>Hotel y piscina<span class="where">Descanso, sin despertador</span></h3>
@@ -145,7 +151,7 @@
 </div>
 
 <!-- LUNES 27 -->
-<div class="card">
+<div class="card" data-date="2026-07-27">
   <div class="dayhead">
     <div class="day-date"><span class="dow">Lun</span><span class="num">27</span></div>
     <h3>Cala Turqueta y Ciutadella<span class="where">Madrugón · 40–45 min de coche</span></h3>
@@ -164,7 +170,7 @@
 </div>
 
 <!-- MARTES 28 -->
-<div class="card">
+<div class="card" data-date="2026-07-28">
   <div class="dayhead">
     <div class="day-date"><span class="dow">Mar</span><span class="num">28</span></div>
     <h3>Monte Toro y Fornells<span class="where">El norte · 25–35 min de coche</span></h3>
@@ -182,7 +188,7 @@
 </div>
 
 <!-- MIÉRCOLES 29 -->
-<div class="card rest">
+<div class="card rest" data-date="2026-07-29">
   <div class="dayhead">
     <div class="day-date"><span class="dow">Mié</span><span class="num">29</span></div>
     <h3>Hotel y piscina<span class="where">Descanso, sin despertador</span></h3>
@@ -192,7 +198,7 @@
 </div>
 
 <!-- JUEVES 30 -->
-<div class="card">
+<div class="card" data-date="2026-07-30">
   <div class="dayhead">
     <div class="day-date"><span class="dow">Jue</span><span class="num">30</span></div>
     <h3>Binibeca y Cova d'en Xoroi<span class="where">El este · 35–40 min de coche</span></h3>
@@ -210,7 +216,7 @@
 </div>
 
 <!-- VIERNES 31 -->
-<div class="card">
+<div class="card" data-date="2026-07-31">
   <div class="dayhead">
     <div class="day-date"><span class="dow">Vie</span><span class="num">31</span></div>
     <h3>Salida<span class="where">Según hora del vuelo</span></h3>
@@ -225,8 +231,44 @@
 <footer>
   Horarios de salida calculados con la regla familiar: despertador + 1 h 15 min. Trayectos estimados desde la zona Son Bou / Sant Tomàs (si el hotel está en Cala Galdana, sumar o restar ~10 min).
   Los nombres de restaurantes y lugares enlazan con Google Maps: al pinchar se abre la ficha del sitio para navegar hasta él.
+  Durante el viaje, al abrir la web se coloca sola en el día en curso y marca con «ahora» la actividad que toca.
   Fotos de <a href="https://commons.wikimedia.org/">Wikimedia Commons</a> (licencias libres; clic en cada foto para ver autor y licencia). Precios verificados en julio de 2026.
 </footer>
 </main>
+<script>
+(function () {
+  // Devuelve fecha y minutos del día en hora de Menorca (Europe/Madrid).
+  // Para probar: añadir ?t=2026-07-25T13:30 a la URL.
+  function ahora() {
+    var q = new URLSearchParams(location.search).get("t");
+    if (q) {
+      var m = q.match(/^(\d{4}-\d{2}-\d{2})T(\d{1,2}):(\d{2})$/);
+      if (m) return { fecha: m[1], min: +m[2] * 60 + +m[3] };
+    }
+    var p = {};
+    new Intl.DateTimeFormat("en-CA", {
+      timeZone: "Europe/Madrid",
+      year: "numeric", month: "2-digit", day: "2-digit",
+      hour: "2-digit", minute: "2-digit", hourCycle: "h23"
+    }).formatToParts(new Date()).forEach(function (x) { p[x.type] = x.value; });
+    return { fecha: p.year + "-" + p.month + "-" + p.day, min: +p.hour * 60 + +p.minute };
+  }
+  var t = ahora();
+  var card = document.querySelector('.card[data-date="' + t.fecha + '"]');
+  if (!card) return;
+  card.classList.add("today");
+  var actual = null;
+  card.querySelectorAll("table.sched td.t").forEach(function (td) {
+    var txt = td.textContent.trim();
+    if (/\p{L}/u.test(txt)) return; // etiquetas sin hora fija: "Vuelo", "Mañana", "Vuelo −2:30"…
+    var m = txt.match(/(\d{1,2}):(\d{2})/);
+    if (m && +m[1] * 60 + +m[2] <= t.min) actual = td.parentElement;
+  });
+  if (actual) actual.classList.add("now");
+  setTimeout(function () {
+    (actual || card).scrollIntoView({ behavior: "smooth", block: actual ? "center" : "start" });
+  }, 300);
+})();
+</script>
 </body>
 </html>
