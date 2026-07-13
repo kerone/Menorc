@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Viaje a Menorca · 24–31 julio 2026</title>
+<style>
+  :root {
+    --bg: #f8f6f1;
+    --surface: #ffffff;
+    --ink: #22333b;
+    --ink-soft: #5c6e75;
+    --accent: #0e7d8a;
+    --accent-soft: #e0f0f2;
+    --sand: #b98f52;
+    --sand-soft: #f4ead9;
+    --line: #e2ddd2;
+    --warn-bg: #fdf3e4;
+    --warn-border: #dfae62;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #101b20; --surface: #18262d; --ink: #e6e2d8; --ink-soft: #9fb0b5;
+      --accent: #55c1cd; --accent-soft: #12333a; --sand: #d4ab6a; --sand-soft: #2c2618;
+      --line: #26363e; --warn-bg: #2b2415; --warn-border: #8a6a2e;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font: 16px/1.6 -apple-system, "Segoe UI", system-ui, sans-serif;
+    margin: 0;
+    padding: 0 1rem 4rem;
+  }
+  main { max-width: 760px; margin: 0 auto; }
+  header.top { padding: 3rem 0 1.5rem; border-bottom: 3px solid var(--accent); margin-bottom: 1.5rem; }
+  .eyebrow {
+    text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.75rem;
+    font-weight: 600; color: var(--accent); margin: 0 0 0.5rem;
+  }
+  h1 {
+    font-family: "Iowan Old Style", Palatino, "Palatino Linotype", Georgia, serif;
+    font-size: clamp(2rem, 6vw, 2.8rem); line-height: 1.15; margin: 0 0 0.4rem; text-wrap: balance;
+  }
+  .sub { color: var(--ink-soft); margin: 0; }
+  h2 {
+    font-family: "Iowan Old Style", Palatino, "Palatino Linotype", Georgia, serif;
+    font-size: 1.45rem; margin: 2.5rem 0 1rem; text-wrap: balance;
+  }
+  .rule {
+    background: var(--accent-soft); border-radius: 10px; padding: 1rem 1.25rem; margin-bottom: 1.5rem;
+  }
+  .rule strong { color: var(--accent); }
+  .rule p { margin: 0.3rem 0; }
+  .card {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
+    padding: 1.2rem 1.4rem; margin: 0 0 1.4rem;
+  }
+  .dayhead { display: flex; align-items: center; gap: 1rem; margin-bottom: 0.8rem; }
+  .day-date {
+    text-align: center; background: var(--accent-soft); color: var(--accent);
+    border-radius: 8px; padding: 0.4rem 0.7rem; min-width: 3.2rem;
+    font-variant-numeric: tabular-nums; flex-shrink: 0;
+  }
+  .rest .day-date { background: var(--sand-soft); color: var(--sand); }
+  .day-date .dow { display: block; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+  .day-date .num { display: block; font-size: 1.5rem; font-weight: 700; line-height: 1.1; }
+  .dayhead h3 { margin: 0; font-size: 1.2rem; }
+  .dayhead .where { color: var(--ink-soft); font-size: 0.9rem; display: block; }
+  table.sched { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; margin: 0.4rem 0 0.8rem; }
+  table.sched td { padding: 0.4rem 0.6rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+  table.sched tr:last-child td { border-bottom: none; }
+  td.t { white-space: nowrap; font-weight: 700; color: var(--accent); width: 5.2rem; }
+  tr.alarm td.t { color: var(--sand); }
+  tr.lunch td { background: var(--accent-soft); }
+  tr.lunch td:first-child { border-radius: 6px 0 0 6px; }
+  tr.lunch td:last-child { border-radius: 0 6px 6px 0; }
+  .note { font-size: 0.88rem; color: var(--ink-soft); margin: 0.3rem 0 0.8rem; }
+  .warn {
+    background: var(--warn-bg); border-left: 4px solid var(--warn-border);
+    border-radius: 0 8px 8px 0; padding: 0.6rem 0.9rem; margin: 0.6rem 0; font-size: 0.92rem;
+  }
+  .gallery {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-top: 0.9rem;
+  }
+  @media (max-width: 540px) { .gallery { grid-template-columns: repeat(2, 1fr); } }
+  .gallery .ph { display: block; aspect-ratio: 4 / 3; overflow: hidden; border-radius: 8px; background: var(--line); }
+  .gallery img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.25s ease; }
+  @media (prefers-reduced-motion: no-preference) { .gallery .ph:hover img { transform: scale(1.05); } }
+  a { color: var(--accent); }
+  footer { margin-top: 3rem; color: var(--ink-soft); font-size: 0.85rem; }
+</style>
+</head>
+<body>
+<main>
+<header class="top">
+  <p class="eyebrow">Plan familiar · 3 adultos + niños de 4 y 9 · Familia numerosa</p>
+  <h1>Viaje a Menorca</h1>
+  <p class="sub">Del viernes 24 al viernes 31 de julio de 2026 · Hotel en el sur centro con piscina y cena incluida</p>
+</header>
+
+<div class="rule">
+  <p><strong>Cómo funciona cada día:</strong></p>
+  <p>⏰ Del despertador a salir del hotel: <strong>1 h 15 min</strong> (desayuno incluido).</p>
+  <p>🍽️ Reserva de comida: <strong>13:00 si salimos muy temprano · 14:00 si salimos tarde</strong>. Reservar con antelación (salvo Es Bruc, que no acepta reservas a mediodía).</p>
+  <p>🌬️ Cada mañana, mirar la tramontana: viento del norte → el plan del sur vale; viento del sur (raro) → cambiar el día por uno del norte.</p>
+</div>
+
+<!-- VIERNES 24 -->
+<div class="card">
+  <div class="dayhead">
+    <div class="day-date"><span class="dow">Vie</span><span class="num">24</span></div>
+    <h3>Llegada<span class="where">Aeropuerto → hotel</span></h3>
+  </div>
+  <table class="sched">
+    <tr><td class="t">Vuelo</td><td>Recoger coche en el aeropuerto (Autos Valls / Ownerscars, elevador para la niña).</td></tr>
+    <tr><td class="t">Después</td><td>Hotel, piscina y reconocer la zona. Cena en el hotel.</td></tr>
+  </table>
+</div>
+
+<!-- SÁBADO 25 -->
+<div class="card">
+  <div class="dayhead">
+    <div class="day-date"><span class="dow">Sáb</span><span class="num">25</span></div>
+    <h3>Sant Tomàs y Binigaus<span class="where">Día suave · 10–15 min de coche</span></h3>
+  </div>
+  <table class="sched">
+    <tr class="alarm"><td class="t">⏰ 8:45</td><td>Despertador. Desayuno con calma.</td></tr>
+    <tr><td class="t">10:00</td><td>Salir del hotel hacia Sant Tomàs.</td></tr>
+    <tr><td class="t">10:15</td><td>Playa: arena, poca profundidad, servicios. Sábado = calas vírgenes a tope, por eso hoy toca urbanizada.</td></tr>
+    <tr class="lunch"><td class="t">🍽️ 13:00</td><td><strong>Es Bruc</strong>, a pie de playa Sant Adeodato. <b>Sin reserva a mediodía: estar allí a las 13:00 en punto.</b> Pescado a la brasa, 20–30 €/pers.</td></tr>
+    <tr><td class="t">14:30</td><td>Más playa, o paseo a Binigaus (virgen, aguas poco profundas). Con el de 9: Cova des Coloms, 30–40 min andando.</td></tr>
+    <tr><td class="t">~17:30</td><td>Vuelta al hotel. Piscina y cena.</td></tr>
+  </table>
+  <!--GALLERY:sant-tomas+binigaus-->
+</div>
+
+<!-- DOMINGO 26 -->
+<div class="card rest">
+  <div class="dayhead">
+    <div class="day-date"><span class="dow">Dom</span><span class="num">26</span></div>
+    <h3>Hotel y piscina<span class="where">Descanso, sin despertador</span></h3>
+  </div>
+</div>
+
+<!-- LUNES 27 -->
+<div class="card">
+  <div class="dayhead">
+    <div class="day-date"><span class="dow">Lun</span><span class="num">27</span></div>
+    <h3>Cala Turqueta y Ciutadella<span class="where">Madrugón · 40–45 min de coche</span></h3>
+  </div>
+  <table class="sched">
+    <tr class="alarm"><td class="t">⏰ 7:15</td><td>Despertador. El único madrugón del viaje.</td></tr>
+    <tr><td class="t">8:30</td><td>Salir del hotel hacia Turqueta. Mirar los paneles LIBRE/COMPLETO en carretera.</td></tr>
+    <tr><td class="t">9:15</td><td>Llegada al parking (gratis). Si está justo: dejar al grupo en el acceso y que un adulto aparque. Baño: arena blanca, agua turquesa, poco fondo. Sin chiringuito: llevar nevera, agua y sombrilla.</td></tr>
+    <tr><td class="t">12:15</td><td>Recoger y coche a Ciutadella (25 min).</td></tr>
+    <tr class="lunch"><td class="t">🍽️ 13:00</td><td><strong>C'an Rafa</strong> (reservar; pescado a la plancha, 20–25 €/pers) o <strong>Bar Imperi</strong> sin reserva (llonguets, ~5–7 € con bebida).</td></tr>
+    <tr><td class="t">14:30</td><td>Casco antiguo y puerto de Ciutadella: llano, helados. Zona azul gratis de 13:30 a 18:00.</td></tr>
+    <tr><td class="t">~17:30</td><td>Vuelta al hotel (45 min). Piscina y cena.</td></tr>
+  </table>
+  <div class="warn">Alternativa: Macarella en bus lanzadera desde Ciutadella (reserva obligatoria 2 días antes, 8,40 € i/v por persona).</div>
+  <!--GALLERY:turqueta+ciutadella-->
+</div>
+
+<!-- MARTES 28 -->
+<div class="card">
+  <div class="dayhead">
+    <div class="day-date"><span class="dow">Mar</span><span class="num">28</span></div>
+    <h3>Monte Toro y Fornells<span class="where">El norte · 25–35 min de coche</span></h3>
+  </div>
+  <table class="sched">
+    <tr class="alarm"><td class="t">⏰ 8:15</td><td>Despertador.</td></tr>
+    <tr><td class="t">9:30</td><td>Salir del hotel hacia Es Mercadal.</td></tr>
+    <tr><td class="t">10:00</td><td>Subida al Monte Toro: punto más alto de la isla (358 m), vistas totales, gratis. 30–40 min bastan.</td></tr>
+    <tr><td class="t">11:00</td><td>Fornells: paseo por el puerto. Opcional: kayak en la bahía (protegida, sin olas), 1–2 h, ~70–100 € los cinco.</td></tr>
+    <tr class="lunch"><td class="t">🍽️ 14:00</td><td><strong>Sa Rumbada</strong> (reservar): menú caldereta de langosta 43 €; niños arroz o pescado. ~155–165 € familia. Alternativa barata: arroz en el puerto (~85–105 €).</td></tr>
+    <tr><td class="t">15:30</td><td>Playa Arenal d'en Castell (15 min; arena fina, poca profundidad, familiar) o vuelta tranquila.</td></tr>
+    <tr><td class="t">~18:00</td><td>Vuelta al hotel (35 min). Cena.</td></tr>
+  </table>
+  <!--GALLERY:monte-toro+fornells+arenal-den-castell-->
+</div>
+
+<!-- MIÉRCOLES 29 -->
+<div class="card rest">
+  <div class="dayhead">
+    <div class="day-date"><span class="dow">Mié</span><span class="num">29</span></div>
+    <h3>Hotel y piscina<span class="where">Descanso, sin despertador</span></h3>
+  </div>
+  <p class="note">Opción de tarde: Cala Mitjana desde Cala Galdana, 20 min a pie por el bosque. Virgen, sin servicios, llevar agua.</p>
+  <!--GALLERY:cala-mitjana-->
+</div>
+
+<!-- JUEVES 30 -->
+<div class="card">
+  <div class="dayhead">
+    <div class="day-date"><span class="dow">Jue</span><span class="num">30</span></div>
+    <h3>Binibeca y Cova d'en Xoroi<span class="where">El este · 35–40 min de coche</span></h3>
+  </div>
+  <table class="sched">
+    <tr class="alarm"><td class="t">⏰ 7:45</td><td>Despertador.</td></tr>
+    <tr><td class="t">9:00</td><td>Salir del hotel hacia Binibèquer Vell.</td></tr>
+    <tr><td class="t">9:45</td><td>Paseo por el pueblo blanco de pescadores, antes de que se llene (zona residencial: silencio).</td></tr>
+    <tr><td class="t">11:00</td><td>Baño en playa Binibeca o Punta Prima (arena, poco fondo).</td></tr>
+    <tr class="lunch"><td class="t">🍽️ 14:00</td><td><strong>Sa Musclera</strong>, en Binibeca (reservar): mejillones a la brasa, pescado fresco, terraza. 20–30 €/pers.</td></tr>
+    <tr><td class="t">15:45</td><td>De vuelta, parada en la <strong>Cova d'en Xoroi</strong> (Cala en Porter): cueva en el acantilado, ambiente familiar de día. 12,90 € adulto / 6 € niño = 50,70 € familia.</td></tr>
+    <tr><td class="t">~18:00</td><td>Vuelta al hotel (25 min). Cena.</td></tr>
+  </table>
+  <!--GALLERY:binibeca+cova-xoroi-->
+</div>
+
+<!-- VIERNES 31 -->
+<div class="card">
+  <div class="dayhead">
+    <div class="day-date"><span class="dow">Vie</span><span class="num">31</span></div>
+    <h3>Salida<span class="where">Según hora del vuelo</span></h3>
+  </div>
+  <table class="sched">
+    <tr><td class="t">Mañana</td><td>Piscina o último baño en Son Bou (2,5 km; la zona oeste es la más tranquila).</td></tr>
+    <tr><td class="t">Vuelo −2:30</td><td>Salir hacia el aeropuerto y devolver el coche (contar 30 min de trayecto + entrega).</td></tr>
+  </table>
+  <!--GALLERY:son-bou-->
+</div>
+
+<footer>
+  Horarios de salida calculados con la regla familiar: despertador + 1 h 15 min. Trayectos estimados desde la zona Son Bou / Sant Tomàs (si el hotel está en Cala Galdana, sumar o restar ~10 min).
+  Fotos de <a href="https://commons.wikimedia.org/">Wikimedia Commons</a> (licencias libres; clic en cada foto para ver autor y licencia). Precios verificados en julio de 2026.
+</footer>
+</main>
+</body>
+</html>

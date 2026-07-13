@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Viaje a Menorca · 24–31 julio 2026</title>
+<style>
+  :root {
+    --bg: #f8f6f1;
+    --surface: #ffffff;
+    --ink: #22333b;
+    --ink-soft: #5c6e75;
+    --accent: #0e7d8a;
+    --accent-soft: #e0f0f2;
+    --sand: #b98f52;
+    --sand-soft: #f4ead9;
+    --line: #e2ddd2;
+    --warn-bg: #fdf3e4;
+    --warn-border: #dfae62;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #101b20; --surface: #18262d; --ink: #e6e2d8; --ink-soft: #9fb0b5;
+      --accent: #55c1cd; --accent-soft: #12333a; --sand: #d4ab6a; --sand-soft: #2c2618;
+      --line: #26363e; --warn-bg: #2b2415; --warn-border: #8a6a2e;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font: 16px/1.6 -apple-system, "Segoe UI", system-ui, sans-serif;
+    margin: 0;
+    padding: 0 1rem 4rem;
+  }
+  main { max-width: 760px; margin: 0 auto; }
+  header.top { padding: 3rem 0 1.5rem; border-bottom: 3px solid var(--accent); margin-bottom: 1.5rem; }
+  .eyebrow {
+    text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.75rem;
+    font-weight: 600; color: var(--accent); margin: 0 0 0.5rem;
+  }
+  h1 {
+    font-family: "Iowan Old Style", Palatino, "Palatino Linotype", Georgia, serif;
+    font-size: clamp(2rem, 6vw, 2.8rem); line-height: 1.15; margin: 0 0 0.4rem; text-wrap: balance;
+  }
+  .sub { color: var(--ink-soft); margin: 0; }
+  h2 {
+    font-family: "Iowan Old Style", Palatino, "Palatino Linotype", Georgia, serif;
+    font-size: 1.45rem; margin: 2.5rem 0 1rem; text-wrap: balance;
+  }
+  .rule {
+    background: var(--accent-soft); border-radius: 10px; padding: 1rem 1.25rem; margin-bottom: 1.5rem;
+  }
+  .rule strong { color: var(--accent); }
+  .rule p { margin: 0.3rem 0; }
+  .card {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
+    padding: 1.2rem 1.4rem; margin: 0 0 1.4rem;
+  }
+  .dayhead { display: flex; align-items: center; gap: 1rem; margin-bottom: 0.8rem; }
+  .day-date {
+    text-align: center; background: var(--accent-soft); color: var(--accent);
+    border-radius: 8px; padding: 0.4rem 0.7rem; min-width: 3.2rem;
+    font-variant-numeric: tabular-nums; flex-shrink: 0;
+  }
+  .rest .day-date { background: var(--sand-soft); color: var(--sand); }
+  .day-date .dow { display: block; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+  .day-date .num { display: block; font-size: 1.5rem; font-weight: 700; line-height: 1.1; }
+  .dayhead h3 { margin: 0; font-size: 1.2rem; }
+  .dayhead .where { color: var(--ink-soft); font-size: 0.9rem; display: block; }
+  table.sched { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; margin: 0.4rem 0 0.8rem; }
+  table.sched td { padding: 0.4rem 0.6rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+  table.sched tr:last-child td { border-bottom: none; }
+  td.t { white-space: nowrap; font-weight: 700; color: var(--accent); width: 5.2rem; }
+  tr.alarm td.t { color: var(--sand); }
+  tr.lunch td { background: var(--accent-soft); }
+  tr.lunch td:first-child { border-radius: 6px 0 0 6px; }
+  tr.lunch td:last-child { border-radius: 0 6px 6px 0; }
+  .note { font-size: 0.88rem; color: var(--ink-soft); margin: 0.3rem 0 0.8rem; }
+  .warn {
+    background: var(--warn-bg); border-left: 4px solid var(--warn-border);
+    border-radius: 0 8px 8px 0; padding: 0.6rem 0.9rem; margin: 0.6rem 0; font-size: 0.92rem;
+  }
+  .gallery {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-top: 0.9rem;
+  }
+  @media (max-width: 540px) { .gallery { grid-template-columns: repeat(2, 1fr); } }
+  .gallery .ph { display: block; aspect-ratio: 4 / 3; overflow: hidden; border-radius: 8px; background: var(--line); }
+  .gallery img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.25s ease; }
+  @media (prefers-reduced-motion: no-preference) { .gallery .ph:hover img { transform: scale(1.05); } }
+  a { color: var(--accent); }
+  footer { margin-top: 3rem; color: var(--ink-soft); font-size: 0.85rem; }
+</style>
+</head>
+<body>
+<main>
+<header class="top">
+  <p class="eyebrow">Plan familiar · 3 adultos + niños de 4 y 9 · Familia numerosa</p>
+  <h1>Viaje a Menorca</h1>
+  <p class="sub">Del viernes 24 al viernes 31 de julio de 2026 · Hotel en el sur centro con piscina y cena incluida</p>
+</header>
+
+<div class="rule">
+  <p><strong>Cómo funciona cada día:</strong></p>
+  <p>⏰ Del despertador a salir del hotel: <strong>1 h 15 min</strong> (desayuno incluido).</p>
+  <p>🍽️ Reserva de comida: <strong>13:00 si salimos muy temprano · 14:00 si salimos tarde</strong>. Reservar con antelación (salvo Es Bruc, que no acepta reservas a mediodía).</p>
+  <p>🌬️ Cada mañana, mirar la tramontana: viento del norte → el plan del sur vale; viento del sur (raro) → cambiar el día por uno del norte.</p>
+</div>
+
+<!-- VIERNES 24 -->
+<div class="card">
+  <div class="dayhead">
+    <div class="day-date"><span class="dow">Vie</span><span class="num">24</span></div>
+    <h3>Llegada<span class="where">Aeropuerto → hotel</span></h3>
+  </div>
+  <table class="sched">
+    <tr><td class="t">Vuelo</td><td>Recoger coche en el aeropuerto (Autos Valls / Ownerscars, elevador para la niña).</td></tr>
+    <tr><td class="t">Después</td><td>Hotel, piscina y reconocer la zona. Cena en el hotel.</td></tr>
+  </table>
+</div>
+
+<!-- SÁBADO 25 -->
+<div class="card">
+  <div class="dayhead">
+    <div class="day-date"><span class="dow">Sáb</span><span class="num">25</span></div>
+    <h3>Sant Tomàs y Binigaus<span class="where">Día suave · 10–15 min de coche</span></h3>
+  </div>
+  <table class="sched">
+    <tr class="alarm"><td class="t">⏰ 8:45</td><td>Despertador. Desayuno con calma.</td></tr>
+    <tr><td class="t">10:00</td><td>Salir del hotel hacia Sant Tomàs.</td></tr>
+    <tr><td class="t">10:15</td><td>Playa: arena, poca profundidad, servicios. Sábado = calas vírgenes a tope, por eso hoy toca urbanizada.</td></tr>
+    <tr class="lunch"><td class="t">🍽️ 13:00</td><td><strong>Es Bruc</strong>, a pie de playa Sant Adeodato. <b>Sin reserva a mediodía: estar allí a las 13:00 en punto.</b> Pescado a la brasa, 20–30 €/pers.</td></tr>
+    <tr><td class="t">14:30</td><td>Más playa, o paseo a Binigaus (virgen, aguas poco profundas). Con el de 9: Cova des Coloms, 30–40 min andando.</td></tr>
+    <tr><td class="t">~17:30</td><td>Vuelta al hotel. Piscina y cena.</td></tr>
+  </table>
+  <div class="gallery"><a class="ph" href="https://commons.wikimedia.org/wiki/File:Platja_de_Sant_Tom%C3%A0s_Playa_de_Santo_Tom%C3%A1s_20180629_133829.jpg" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Platja_de_Sant_Tom%C3%A0s_Playa_de_Santo_Tom%C3%A1s_20180629_133829.jpg/960px-Platja_de_Sant_Tom%C3%A0s_Playa_de_Santo_Tom%C3%A1s_20180629_133829.jpg" alt="Platja de Sant Tomàs Playa de Santo Tomás 20180629 133829.jpg" loading="lazy"></a>
+<a class="ph" href="https://commons.wikimedia.org/wiki/File:Platja_de_Sant_Tom%C3%A0s_Playa_de_Santo_Tom%C3%A1s_20180629_133801_Richtone(HDR).jpg" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Platja_de_Sant_Tom%C3%A0s_Playa_de_Santo_Tom%C3%A1s_20180629_133801_Richtone%28HDR%29.jpg/960px-Platja_de_Sant_Tom%C3%A0s_Playa_de_Santo_Tom%C3%A1s_20180629_133801_Richtone%28HDR%29.jpg" alt="Platja de Sant Tomàs Playa de Santo Tomás 20180629 133801 Richtone(HDR).jpg" loading="lazy"></a>
+<a class="ph" href="https://commons.wikimedia.org/wiki/File:Boaters_in_Sant_Tomas.png" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Boaters_in_Sant_Tomas.png/960px-Boaters_in_Sant_Tomas.png" alt="Boaters in Sant Tomas.png" loading="lazy"></a>
+<a class="ph" href="https://commons.wikimedia.org/wiki/File:Leisure_boat_renter_in_Sant_Tomas.png" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Leisure_boat_renter_in_Sant_Tomas.png/960px-Leisure_boat_renter_in_Sant_Tomas.png" alt="Leisure boat renter in Sant Tomas.png" loading="lazy"></a>
+<a class="ph" href="https://commons.wikimedia.org/wiki/File:Sant_Tom%C3%A0s_(2_de_agosto_de_2015,_es_Migjorn_Gran).jpg" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Sant_Tom%C3%A0s_%282_de_agosto_de_2015%2C_es_Migjorn_Gran%29.jpg/960px-Sant_Tom%C3%A0s_%282_de_agosto_de_2015%2C_es_Migjorn_Gran%29.jpg" alt="Sant Tomàs (2 de agosto de 2015, es Migjorn Gran).jpg" loading="lazy"></a>
+<a class="ph" href="https://commons.wikimedia.org/wiki/File:Platja_de_Sant_Tom%C3%A0s_(30_de_julio_de_2017,_es_Migjorn_Gran)_02.jpg" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Platja_de_Sant_Tom%C3%A0s_%2830_de_julio_de_2017%2C_es_Migjorn_Gran%29_02.jpg/960px-Platja_de_Sant_Tom%C3%A0s_%2830_de_julio_de_2017%2C_es_Migjorn_Gran%29_02.jpg" alt="Platja de Sant Tomàs (30 de julio de 2017, es Migjorn Gran) 02.jpg" loading="lazy"></a>
+<a class="ph" href="https://commons.wikimedia.org/wiki/File:Platja_de_Binigaus,_Menorca_(14291583412).jpg" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Platja_de_Binigaus%2C_Menorca_%2814291583412%29.jpg/960px-Platja_de_Binigaus%2C_Menorca_%2814291583412%29.jpg" alt="Platja de Binigaus, Menorca (14291583412).jpg" loading="lazy"></a>
+<a class="ph" href="https://commons.wikimedia.org/wiki/File:Platja_de_Binigaus,_Menorca_(7159510977).jpg" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Platja_de_Binigaus%2C_Menorca_%287159510977%29.jpg/960px-Platja_de_Binigaus%2C_Menorca_%287159510977%29.jpg" alt="Platja de Binigaus, Menorca (7159510977).jpg" loading="lazy"></a>
+<a class="ph" href="https://commons.wikimedia.org/wiki/File:2007_06_30_-_Binigaus_06_(7381650100).jpg" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/2007_06_30_-_Binigaus_06_%287381650100%29.jpg/960px-2007_06_30_-_Binigaus_06_%287381650100%29.jpg" alt="2007 06 30 - Binigaus 06 (7381650100).jpg" loading="lazy"></a>
+<a class="ph" href="https://commons.wikimedia.org/wiki/File:2007_06_30_-_Binigaus_070809_(7381634184).jpg" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/2007_06_30_-_Binigaus_070809_%287381634184%29.jpg/960px-2007_06_30_-_Binigaus_070809_%287381634184%29.jpg" alt="2007 06 30 - Binigaus 070809 (7381634184).jpg" loading="lazy"></a>
+<a class="ph" href="https://commons.wikimedia.org/wiki/File:2007_06_30_-_Binigaus_04_(7381653824).jpg" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/2007_06_30_-_Binigaus_04_%287381653824%29.jpg/960px-2007_06_30_-_Binigaus_04_%287381653824%29.jpg" alt="2007 06 30 - Binigaus 04 (7381653824).jpg" loading="lazy"></a>
+<a class="ph" href="https://commons.wikimedia.org/wiki/File:2007_06_30_-_Binigaus_13_(7381644668).jpg" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/2007_06_30_-_Binigaus_13_%287381644668%29.jpg/960px-2007_06_30_-_Binigaus_13_%287381644668%29.jpg" alt="2007 06 30 - Binigaus 13 (7381644668).jpg" loading="lazy"></a></div>
+</div>
+
+<!-- DOMINGO 26 -->
+<div class="card rest">
+  <div class="dayhead">
+    <div class="day-date"><span class="dow">Dom</span><span class="num">26</span></div>
+    <h3>Hotel y piscina<span class="where">Descanso, sin despertador</span></h3>
+  </div>
+</div>
+
+<!-- LUNES 27 -->
+<div class="card">
+  <div class="dayhead">
+    <div class="day-date"><span class="dow">Lun</span><span class="num">27</span></div>
+    <h3>Cala Turqueta y Ciutadella<span class="where">Madrugón · 40–45 min de coche</span></h3>
+  </div>
+  <table class="sched">
+    <tr class="alarm"><td class="t">⏰ 7:15</td><td>Despertador. El único madrugón del viaje.</td></tr>
+    <tr><td class="t">8:30</td><td>Salir del hotel hacia Turqueta. Mirar los paneles LIBRE/COMPLETO en carretera.</td></tr>
+    <tr><td class="t">9:15</td><td>Llegada al parking (gratis). Si está justo: dejar al grupo en el acceso y que un adulto aparque. Baño: arena blanca, agua turquesa, poco fondo. Sin chiringuito: llevar nevera, agua y sombrilla.</td></tr>
+    <tr><td class="t">12:15</td><td>Recoger y coche a Ciutadella (25 min).</td></tr>
+    <tr class="lunch"><td class="t">🍽️ 13:00</td><td><strong>C'an Rafa</strong> (reservar; pescado a la plancha, 20–25 €/pers) o <strong>Bar Imperi</strong> sin reserva (llonguets, ~5–7 € con bebida).</td></tr>
+    <tr><td class="t">14:30</td><td>Casco antiguo y puerto de Ciutadella: llano, helados. Zona azul gratis de 13:30 a 18:00.</td></tr>
+    <tr><td class="t">~17:30</td><td>Vuelta al hotel (45 min). Piscina y cena.</td></tr>
+  </table>
+  <div class="warn">Alternativa: Macarella en bus lanzadera desde Ciutadella (reserva obligatoria 2 días antes, 8,40 € i/v por persona).</div>
+  <div class="gallery"><a class="ph" href="https://commons.wikimedia.org/wiki/File:Cala_en_Turqueta_(16234699877).jpg" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Cala_en_Turqueta_%2816234699877%29.jpg/960px-Cala_en_Turqueta_%2816234699877%29.jpg" alt="Cala en Turqueta (16234699877).jpg" loading="lazy"></a>
+<a class="ph" href="https://commons.wikimedia.org/wiki/File:E04_Cala_d%27en_Turqueta.JPG" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/E04_Cala_d%27en_Turqueta.JPG/960px-E04_Cala_d%27en_Turqueta.JPG" alt="E04 Cala d'en Turqueta.JPG" loading="lazy"></a>
+<a class="ph" href="https://commons.wikimedia.org/wiki/File:Cala_en_Turqueta_(37377388482).jpg" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Cala_en_Turqueta_%2837377388482%29.jpg/960px-Cala_en_Turqueta_%2837377388482%29.jpg" alt="Cala en Turqueta (37377388482).jpg" loading="lazy"></a>
+<a class="ph" href="https://commons.wikimedia.org/wiki/File:Cala_en_Turqueta_(37377387092).jpg" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Cala_en_Turqueta_%2837377387092%29.jpg/960px-Cala_en_Turqueta_%2837377387092%29.jpg" alt="Cala en Turqueta (37377387092).jpg" loading="lazy"></a>
+<a class="ph" href="https://commons.wikimedia.org/wiki/File:Cala_en_Turqueta_(36698920714).jpg" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Cala_en_Turqueta_%2836698920714%29.jpg/960px-Cala_en_Turqueta_%2836698920714%29.jpg" alt="Cala en Turqueta (36698920714).jpg" loading="lazy"></a>
+<a class="ph" href="https://commons.wikimedia.org/wiki/File:Cala_en_Turqueta_(37408698231).jpg" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Cala_en_Turqueta_%2837408698231%29.jpg/960px-Cala_en_Turqueta_%2837408698231%29.jpg" alt="Cala en Turqueta (37408698231).jpg" loading="lazy"></a>
+<a class="ph" href="https://commons.wikimedia.org/wiki/File:Puerto_de_Ciutadella_de_Menorca_-_004.jpg" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Puerto_de_Ciutadella_de_Menorca_-_004.jpg/960px-Puerto_de_Ciutadella_de_Menorca_-_004.jpg" alt="Puerto de Ciutadella de Menorca - 004.jpg" loading="lazy"></a>
+<a class="ph" href="https://commons.wikimedia.org/wiki/File:Puerto_de_Ciutadella_de_Menorca_-_001.jpg" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Puerto_de_Ciutadella_de_Menorca_-_001.jpg/960px-Puerto_de_Ciutadella_de_Menorca_-_001.jpg" alt="Puerto de Ciutadella de Menorca - 001.jpg" loading="lazy"></a>
+<a class="ph" href="https://commons.wikimedia.org/wiki/File:Puerto_de_Ciutadella_de_Menorca_-_002.jpg" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Puerto_de_Ciutadella_de_Menorca_-_002.jpg/960px-Puerto_de_Ciutadella_de_Menorca_-_002.jpg" alt="Puerto de Ciutadella de Menorca - 002.jpg" loading="lazy"></a>
+<a class="ph" href="https://commons.wikimedia.org/wiki/File:Puerto_de_Ciutadella_de_Menorca_-_003.jpg" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Puerto_de_Ciutadella_de_Menorca_-_003.jpg/960px-Puerto_de_Ciutadella_de_Menorca_-_003.jpg" alt="Puerto de Ciutadella de Menorca - 003.jpg" loading="lazy"></a>
+<a class="ph" href="https://commons.wikimedia.org/wiki/File:Puerto_de_Ciudadela2.jpg" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Puerto_de_Ciudadela2.jpg/960px-Puerto_de_Ciudadela2.jpg" alt="Puerto de Ciudadela2.jpg" loading="lazy"></a>
+<a class="ph" href="https://commons.wikimedia.org/wiki/File:Ciutadella_de_Menorca_(29_de_julio_de_2014)_07.JPG" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Ciutadella_de_Menorca_%2829_de_julio_de_2014%29_07.JPG/960px-Ciutadella_de_Menorca_%2829_de_julio_de_2014%29_07.JPG" alt="Ciutadella de Menorca (29 de julio de 2014) 07.JPG" loading="lazy"></a></div>
+</div>
+
+<!-- MARTES 28 -->
+<div class="card">
+  <div class="dayhead">
+    <div class="day-date"><span class="dow">Mar</span><span class="num">28</span></div>
+    <h3>Monte Toro y Fornells<span class="where">El norte · 25–35 min de coche</span></h3>
+  </div>
+  <table class="sched">
+    <tr class="alarm"><td class="t">⏰ 8:15</td><td>Despertador.</td></tr>
+    <tr><td class="t">9:30</td><td>Salir del hotel hacia Es Mercadal.</td></tr>
+    <tr><td class="t">10:00</td><td>Subida al Monte Toro: punto más alto de la isla (358 m), vistas totales, gratis. 30–40 min bastan.</td></tr>
+    <tr><td class="t">11:00</td><td>Fornells: paseo por el puerto. Opcional: kayak en la bahía (protegida, sin olas), 1–2 h, ~70–100 € los cinco.</td></tr>
+    <tr class="lunch"><td class="t">🍽️ 14:00</td><td><strong>Sa Rumbada</strong> (reservar): menú caldereta de langosta 43 €; niños arroz o pescado. ~155–165 € familia. Alternativa barata: arroz en el puerto (~85–105 €).</td></tr>
+    <tr><td class="t">15:30</td><td>Playa Arenal d'en Castell (15 min; arena fina, poca profundidad, familiar) o vuelta tranquila.</td></tr>
+    <tr><td class="t">~18:00</td><td>Vuelta al hotel (35 min). Cena.</td></tr>
+  </table>
+  <div class="gallery"><a class="ph" href="https://commons.wikimedia.org/wiki/File:Monte_Toro.JPG" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Monte_Toro.JPG/960px-Monte_Toro.JPG" alt="Monte Toro.JPG" loading="lazy"></a>
+<a class="ph" href="https://commons.wikimedia.org/wiki/File:Minorque_Monte_Toro_Cote_Nord_-_panoramio.jpg" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Minorque_Monte_Toro_Cote_Nord_-_panoramio.jpg/960px-Minorque_Monte_Toro_Cote_Nord_-_panoramio.jpg" alt="Minorque Monte Toro Cote Nord - panoramio.jpg" loading="lazy"></a>
+<a class="ph" href="https://commons.wikimedia.org/wiki/File:The_view_from_Monte_Toro_(8948718414).jpg" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/The_view_from_Monte_Toro_%288948718414%29.jpg/960px-The_view_from_Monte_Toro_%288948718414%29.jpg" alt="The view from Monte Toro (8948718414).jpg" loading="lazy"></a>
+<a class="ph" href="https://commons.wikimedia.org/wiki/File:ElToro-Alaior.jpg" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/ElToro-Alaior.jpg/960px-ElToro-Alaior.jpg" alt="ElToro-Alaior.jpg" loading="lazy"></a>
+<a class="ph" href="https://commons.wikimedia.org/wiki/File:Holiday_in_Menorca_May_June_2013_(8948147885).jpg" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Holiday_in_Menorca_May_June_2013_%288948147885%29.jpg/960px-Holiday_in_Menorca_May_June_2013_%288948147885%29.jpg" alt="Holiday in Menorca May June 2013 (8948147885).jpg" loading="lazy"></a>
+<a class="ph" href="https://commons.wikimedia.org/wiki/File:Holiday_in_Menorca_May_June_2013_(8948747808).jpg" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Holiday_in_Menorca_May_June_2013_%288948747808%29.jpg/960px-Holiday_in_Menorca_May_June_2013_%288948747808%29.jpg" alt="Holiday in Menorca May June 2013 (8948747808).jpg" loading="lazy"></a>
+<a class="ph" href="https://commons.wikimedia.org/wiki/File:Fornells_(Menorca)_04.jpg" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Fornells_%28Menorca%29_04.jpg/960px-Fornells_%28Menorca%29_04.jpg" alt="Fornells (Menorca) 04.jpg" loading="lazy"></a>
+<a class="ph" href="https://commons.wikimedia.org/wiki/File:Far_Fornells_Menorca_Illes_Balears.JPG" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Far_Fornells_Menorca_Illes_Balears.JPG/960px-Far_Fornells_Menorca_Illes_Balears.JPG" alt="Far Fornells Menorca Illes Balears.JPG" loading="lazy"></a>
+<a class="ph" href="https://commons.wikimedia.org/wiki/File:Fornells_(Menorca)_02.jpg" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Fornells_%28Menorca%29_02.jpg" alt="Fornells (Menorca) 02.jpg" loading="lazy"></a>
+<a class="ph" href="https://commons.wikimedia.org/wiki/File:Fornells_(Menorca)_01.jpg" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Fornells_%28Menorca%29_01.jpg/960px-Fornells_%28Menorca%29_01.jpg" alt="Fornells (Menorca) 01.jpg" loading="lazy"></a>
+<a class="ph" href="https://commons.wikimedia.org/wiki/File:Fornells_(Menorca)_03.jpg" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/6/66/Fornells_%28Menorca%29_03.jpg" alt="Fornells (Menorca) 03.jpg" loading="lazy"></a>
+<a class="ph" href="https://commons.wikimedia.org/wiki/File:Arenal_d%27en_Castell.jpg" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Arenal_d%27en_Castell.jpg/960px-Arenal_d%27en_Castell.jpg" alt="Arenal d'en Castell.jpg" loading="lazy"></a>
+<a class="ph" href="https://commons.wikimedia.org/wiki/File:Arenal_d%27en_Castell_(27_de_julio_de_2017,_es_Mercadal).jpg" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Arenal_d%27en_Castell_%2827_de_julio_de_2017%2C_es_Mercadal%29.jpg/960px-Arenal_d%27en_Castell_%2827_de_julio_de_2017%2C_es_Mercadal%29.jpg" alt="Arenal d'en Castell (27 de julio de 2017, es Mercadal).jpg" loading="lazy"></a>
+<a class="ph" href="https://commons.wikimedia.org/wiki/File:Arenal_d%27en_Castell_(21263653971).jpg" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Arenal_d%27en_Castell_%2821263653971%29.jpg/960px-Arenal_d%27en_Castell_%2821263653971%29.jpg" alt="Arenal d'en Castell (21263653971).jpg" loading="lazy"></a>
+<a class="ph" href="https://commons.wikimedia.org/wiki/File:Arenal_d%27en_Castell_(21068746189).jpg" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Arenal_d%27en_Castell_%2821068746189%29.jpg/960px-Arenal_d%27en_Castell_%2821068746189%29.jpg" alt="Arenal d'en Castell (21068746189).jpg" loading="lazy"></a>
+<a class="ph" href="https://commons.wikimedia.org/wiki/File:Arenal_d%27en_Castell_(21068735409).jpg" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Arenal_d%27en_Castell_%2821068735409%29.jpg/960px-Arenal_d%27en_Castell_%2821068735409%29.jpg" alt="Arenal d'en Castell (21068735409).jpg" loading="lazy"></a>
+<a class="ph" href="https://commons.wikimedia.org/wiki/File:Arenal_d%27en_Castell.jpeg" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Arenal_d%27en_Castell.jpeg/960px-Arenal_d%27en_Castell.jpeg" alt="Arenal d'en Castell.jpeg" loading="lazy"></a></div>
+</div>
+
+<!-- MIÉRCOLES 29 -->
+<div class="card rest">
+  <div class="dayhead">
+    <div class="day-date"><span class="dow">Mié</span><span class="num">29</span></div>
+    <h3>Hotel y piscina<span class="where">Descanso, sin despertador</span></h3>
+  </div>
+  <p class="note">Opción de tarde: Cala Mitjana desde Cala Galdana, 20 min a pie por el bosque. Virgen, sin servicios, llevar agua.</p>
+  <div class="gallery"><a class="ph" href="https://commons.wikimedia.org/wiki/File:Cala_Mitjana,_Menorca_-_50127521481.jpg" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Cala_Mitjana%2C_Menorca_-_50127521481.jpg/960px-Cala_Mitjana%2C_Menorca_-_50127521481.jpg" alt="Cala Mitjana, Menorca - 50127521481.jpg" loading="lazy"></a>
+<a class="ph" href="https://commons.wikimedia.org/wiki/File:Cala_Mitjana_(37151034940).jpg" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Cala_Mitjana_%2837151034940%29.jpg/960px-Cala_Mitjana_%2837151034940%29.jpg" alt="Cala Mitjana (37151034940).jpg" loading="lazy"></a>
+<a class="ph" href="https://commons.wikimedia.org/wiki/File:Cala_Mitjana_(30097413356).jpg" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Cala_Mitjana_%2830097413356%29.jpg/960px-Cala_Mitjana_%2830097413356%29.jpg" alt="Cala Mitjana (30097413356).jpg" loading="lazy"></a>
+<a class="ph" href="https://commons.wikimedia.org/wiki/File:Cala_Mitjana.jpg" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Cala_Mitjana.jpg/960px-Cala_Mitjana.jpg" alt="Cala Mitjana.jpg" loading="lazy"></a>
+<a class="ph" href="https://commons.wikimedia.org/wiki/File:Cala_Mitjana_en_hiver.JPG" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Cala_Mitjana_en_hiver.JPG/960px-Cala_Mitjana_en_hiver.JPG" alt="Cala Mitjana en hiver.JPG" loading="lazy"></a>
+<a class="ph" href="https://commons.wikimedia.org/wiki/File:Cala_Mitjana_3.jpg" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Cala_Mitjana_3.jpg/960px-Cala_Mitjana_3.jpg" alt="Cala Mitjana 3.jpg" loading="lazy"></a></div>
+</div>
+
+<!-- JUEVES 30 -->
+<div class="card">
+  <div class="dayhead">
+    <div class="day-date"><span class="dow">Jue</span><span class="num">30</span></div>
+    <h3>Binibeca y Cova d'en Xoroi<span class="where">El este · 35–40 min de coche</span></h3>
+  </div>
+  <table class="sched">
+    <tr class="alarm"><td class="t">⏰ 7:45</td><td>Despertador.</td></tr>
+    <tr><td class="t">9:00</td><td>Salir del hotel hacia Binibèquer Vell.</td></tr>
+    <tr><td class="t">9:45</td><td>Paseo por el pueblo blanco de pescadores, antes de que se llene (zona residencial: silencio).</td></tr>
+    <tr><td class="t">11:00</td><td>Baño en playa Binibeca o Punta Prima (arena, poco fondo).</td></tr>
+    <tr class="lunch"><td class="t">🍽️ 14:00</td><td><strong>Sa Musclera</strong>, en Binibeca (reservar): mejillones a la brasa, pescado fresco, terraza. 20–30 €/pers.</td></tr>
+    <tr><td class="t">15:45</td><td>De vuelta, parada en la <strong>Cova d'en Xoroi</strong> (Cala en Porter): cueva en el acantilado, ambiente familiar de día. 12,90 € adulto / 6 € niño = 50,70 € familia.</td></tr>
+    <tr><td class="t">~18:00</td><td>Vuelta al hotel (25 min). Cena.</td></tr>
+  </table>
+  <div class="gallery"><a class="ph" href="https://commons.wikimedia.org/wiki/File:Binibeca_Vell,_Menorca.jpg" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Binibeca_Vell%2C_Menorca.jpg/960px-Binibeca_Vell%2C_Menorca.jpg" alt="Binibeca Vell, Menorca.jpg" loading="lazy"></a>
+<a class="ph" href="https://commons.wikimedia.org/wiki/File:Binibequer_Vell_(15844028283).jpg" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Binibequer_Vell_%2815844028283%29.jpg/960px-Binibequer_Vell_%2815844028283%29.jpg" alt="Binibequer Vell (15844028283).jpg" loading="lazy"></a>
+<a class="ph" href="https://commons.wikimedia.org/wiki/File:BinibecaVell-Minorica-Spain-2008_-_panoramio.jpg" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/BinibecaVell-Minorica-Spain-2008_-_panoramio.jpg/960px-BinibecaVell-Minorica-Spain-2008_-_panoramio.jpg" alt="BinibecaVell-Minorica-Spain-2008 - panoramio.jpg" loading="lazy"></a>
+<a class="ph" href="https://commons.wikimedia.org/wiki/File:Binibequer_Vell.jpg" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Binibequer_Vell.jpg/960px-Binibequer_Vell.jpg" alt="Binibequer Vell.jpg" loading="lazy"></a>
+<a class="ph" href="https://commons.wikimedia.org/wiki/File:The_White_Village_(140158783).jpeg" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/The_White_Village_%28140158783%29.jpeg/960px-The_White_Village_%28140158783%29.jpeg" alt="The White Village (140158783).jpeg" loading="lazy"></a>
+<a class="ph" href="https://commons.wikimedia.org/wiki/File:Cova_den_Xoroi.jpg" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Cova_den_Xoroi.jpg/960px-Cova_den_Xoroi.jpg" alt="Cova den Xoroi.jpg" loading="lazy"></a>
+<a class="ph" href="https://commons.wikimedia.org/wiki/File:Sunset_at_Cova_d%27en_Xoroi.jpg" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Sunset_at_Cova_d%27en_Xoroi.jpg/960px-Sunset_at_Cova_d%27en_Xoroi.jpg" alt="Sunset at Cova d'en Xoroi.jpg" loading="lazy"></a>
+<a class="ph" href="https://commons.wikimedia.org/wiki/File:Calan_n_Porter,_Cueva_d%27en_Xoroi_-_panoramio.jpg" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Calan_n_Porter%2C_Cueva_d%27en_Xoroi_-_panoramio.jpg/960px-Calan_n_Porter%2C_Cueva_d%27en_Xoroi_-_panoramio.jpg" alt="Calan n Porter, Cueva d'en Xoroi - panoramio.jpg" loading="lazy"></a>
+<a class="ph" href="https://commons.wikimedia.org/wiki/File:Caves_of_Xoroi,_Cala_en_Porter_IMG_4205_-_panoramio.jpg" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/8/80/Caves_of_Xoroi%2C_Cala_en_Porter_IMG_4205_-_panoramio.jpg" alt="Caves of Xoroi, Cala en Porter IMG 4205 - panoramio.jpg" loading="lazy"></a>
+<a class="ph" href="https://commons.wikimedia.org/wiki/File:Menorca_171.jpg" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Menorca_171.jpg/960px-Menorca_171.jpg" alt="Menorca 171.jpg" loading="lazy"></a>
+<a class="ph" href="https://commons.wikimedia.org/wiki/File:Acantilados_de_menorca.JPG" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Acantilados_de_menorca.JPG/960px-Acantilados_de_menorca.JPG" alt="Acantilados de menorca.JPG" loading="lazy"></a></div>
+</div>
+
+<!-- VIERNES 31 -->
+<div class="card">
+  <div class="dayhead">
+    <div class="day-date"><span class="dow">Vie</span><span class="num">31</span></div>
+    <h3>Salida<span class="where">Según hora del vuelo</span></h3>
+  </div>
+  <table class="sched">
+    <tr><td class="t">Mañana</td><td>Piscina o último baño en Son Bou (2,5 km; la zona oeste es la más tranquila).</td></tr>
+    <tr><td class="t">Vuelo −2:30</td><td>Salir hacia el aeropuerto y devolver el coche (contar 30 min de trayecto + entrega).</td></tr>
+  </table>
+  <div class="gallery"><a class="ph" href="https://commons.wikimedia.org/wiki/File:2016-09-Menorca_Son_Bou.jpg" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/2016-09-Menorca_Son_Bou.jpg/960px-2016-09-Menorca_Son_Bou.jpg" alt="2016-09-Menorca Son Bou.jpg" loading="lazy"></a>
+<a class="ph" href="https://commons.wikimedia.org/wiki/File:Bas%C3%ADlica_Son_Bou_103_%26_funcky_hotel_-_panoramio.jpg" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Bas%C3%ADlica_Son_Bou_103_%26_funcky_hotel_-_panoramio.jpg/960px-Bas%C3%ADlica_Son_Bou_103_%26_funcky_hotel_-_panoramio.jpg" alt="Basílica Son Bou 103 & funcky hotel - panoramio.jpg" loading="lazy"></a>
+<a class="ph" href="https://commons.wikimedia.org/wiki/File:Playa_de_Son_Bou_(Menorca,_5_de_agosto_de_2014)_04.JPG" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Playa_de_Son_Bou_%28Menorca%2C_5_de_agosto_de_2014%29_04.JPG/960px-Playa_de_Son_Bou_%28Menorca%2C_5_de_agosto_de_2014%29_04.JPG" alt="Playa de Son Bou (Menorca, 5 de agosto de 2014) 04.JPG" loading="lazy"></a>
+<a class="ph" href="https://commons.wikimedia.org/wiki/File:Playa_de_Son_Bou_(Menorca,_25_de_julio_de_2014)_01.JPG" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Playa_de_Son_Bou_%28Menorca%2C_25_de_julio_de_2014%29_01.JPG/960px-Playa_de_Son_Bou_%28Menorca%2C_25_de_julio_de_2014%29_01.JPG" alt="Playa de Son Bou (Menorca, 25 de julio de 2014) 01.JPG" loading="lazy"></a>
+<a class="ph" href="https://commons.wikimedia.org/wiki/File:Playa_de_Son_Bou_(Menorca,_5_de_agosto_de_2014)_03.JPG" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Playa_de_Son_Bou_%28Menorca%2C_5_de_agosto_de_2014%29_03.JPG/960px-Playa_de_Son_Bou_%28Menorca%2C_5_de_agosto_de_2014%29_03.JPG" alt="Playa de Son Bou (Menorca, 5 de agosto de 2014) 03.JPG" loading="lazy"></a>
+<a class="ph" href="https://commons.wikimedia.org/wiki/File:Playa_de_Son_Bou_(Menorca,_29_de_julio_de_2014)_01.JPG" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Playa_de_Son_Bou_%28Menorca%2C_29_de_julio_de_2014%29_01.JPG/960px-Playa_de_Son_Bou_%28Menorca%2C_29_de_julio_de_2014%29_01.JPG" alt="Playa de Son Bou (Menorca, 29 de julio de 2014) 01.JPG" loading="lazy"></a></div>
+</div>
+
+<footer>
+  Horarios de salida calculados con la regla familiar: despertador + 1 h 15 min. Trayectos estimados desde la zona Son Bou / Sant Tomàs (si el hotel está en Cala Galdana, sumar o restar ~10 min).
+  Fotos de <a href="https://commons.wikimedia.org/">Wikimedia Commons</a> (licencias libres; clic en cada foto para ver autor y licencia). Precios verificados en julio de 2026.
+</footer>
+</main>
+</body>
+</html>
