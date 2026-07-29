@@ -32,8 +32,23 @@ with open("template.html") as f:
 
 html = re.sub(r"<!--GALLERY:([\w+-]+)-->", lambda m: gallery(m.group(1)), html)
 
+# añade un botón Waze junto a cada enlace de Google Maps, con el mismo destino
+def waze(m):
+    q = m.group(2)
+    return (
+        f'{m.group(1)}<a class="wz" href="https://waze.com/ul?q={q}&amp;navigate=yes"'
+        f' target="_blank" rel="noopener" title="Abrir en Waze">Waze</a>'
+    )
+
+html = re.sub(
+    r'(<a[^>]+href="https://www\.google\.com/maps/search/\?api=1&amp;query=([^"]+)"[^>]*>[^<]*</a>)',
+    waze,
+    html,
+)
+
 with open("index.html", "w") as f:
     f.write(html)
 
 n = html.count('class="ph"')
-print(f"index.html generado con {n} fotos")
+w = html.count('class="wz"')
+print(f"index.html generado con {n} fotos y {w} enlaces Waze")

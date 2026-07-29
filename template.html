@@ -95,6 +95,11 @@
   .gallery img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.25s ease; }
   @media (prefers-reduced-motion: no-preference) { .gallery .ph:hover img { transform: scale(1.05); } }
   a { color: var(--accent); }
+  a.wz {
+    display: inline-block; font-size: 0.72em; font-weight: 600; line-height: 1.5;
+    padding: 0 0.4em; margin-left: 0.3em; border: 1px solid var(--accent);
+    border-radius: 6px; text-decoration: none; vertical-align: 0.12em; white-space: nowrap;
+  }
   footer { margin-top: 3rem; color: var(--ink-soft); font-size: 0.85rem; }
 </style>
 </head>
@@ -235,7 +240,7 @@
 
 <footer>
   Horarios de salida calculados con la regla familiar: despertador + 1 h 15 min. Trayectos estimados desde el hotel Grupotel Mar de Menorca (Es Canutells).
-  Los nombres de restaurantes y lugares enlazan con Google Maps: al pinchar se abre la ficha del sitio para navegar hasta él.
+  Los nombres de restaurantes y lugares enlazan con Google Maps, y el botón «Waze» de al lado abre el mismo destino en Waze para navegar.
   Durante el viaje, al abrir la web se coloca sola en el día en curso y marca con «ahora» la actividad que toca.
   Fotos de <a href="https://commons.wikimedia.org/">Wikimedia Commons</a> (licencias libres; clic en cada foto para ver autor y licencia). Precios verificados en julio de 2026.
 </footer>
