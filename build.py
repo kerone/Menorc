@@ -33,8 +33,9 @@ with open("template.html") as f:
 html = re.sub(r"<!--GALLERY:([\w+-]+)-->", lambda m: gallery(m.group(1)), html)
 
 # añade un botón Waze junto a cada enlace de Google Maps, con el mismo destino
+# (Waze no entiende "+" como espacio: hay que pasarlo a %20)
 def waze(m):
-    q = m.group(2)
+    q = m.group(2).replace("+", "%20")
     return (
         f'{m.group(1)}<a class="wz" href="https://waze.com/ul?q={q}"'
         f' target="_blank" rel="noopener" title="Buscar en Waze">Waze</a>'
