@@ -36,8 +36,8 @@ html = re.sub(r"<!--GALLERY:([\w+-]+)-->", lambda m: gallery(m.group(1)), html)
 def waze(m):
     q = m.group(2)
     return (
-        f'{m.group(1)}<a class="wz" href="https://waze.com/ul?q={q}&amp;navigate=yes"'
-        f' target="_blank" rel="noopener" title="Abrir en Waze">Waze</a>'
+        f'{m.group(1)}<a class="wz" href="https://waze.com/ul?q={q}"'
+        f' target="_blank" rel="noopener" title="Buscar en Waze">Waze</a>'
     )
 
 html = re.sub(
